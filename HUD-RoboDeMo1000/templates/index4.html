@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robot Runner HUD</title>
+    <title>Robo DeMo 1000 HUD</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <style>
         body {
@@ -74,8 +74,8 @@
 <body>
     <div class="hud">
         <div class="system-info">{{ system_info }}</div>
-    </div><!-- Add this button in your HTML where you want the button to appear -->
-            <button onclick="location.href='{{ url_for('run_script') }}'" type="button">Launch Robo DeMo</button>
+    </div><!-- Add this button in your HTML where you want the button to appear --><div class="hud">
+            <button onclick="location.href='{{ url_for('run_script') }}'" type="button">Manual Robo DeMo 1000</button></div>
     <div class="soundboard">
         
         {% for sound in sounds %}

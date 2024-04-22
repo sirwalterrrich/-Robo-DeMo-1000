@@ -122,7 +122,8 @@ def save_screenshot():
 def run_script():
     try:
         # Launches main.py - Robo DeMo - Running Demotivator Motivator
-        subprocess.run(['python', 'main.py'], check=True)
+        #subprocess.run(['python', './RoboDeMo1000/main.py'], check=True)
+        subprocess.run(['python', './RoboDeMo1000/motivator_demotivator_1000.py'], check=True)
         return jsonify({'message': 'Script executed successfully.'}), 200
     except subprocess.CalledProcessError as e:
         return jsonify({'message': 'An error occurred while executing the script.', 'error': str(e)}), 500
