@@ -56,7 +56,7 @@ Future work: Save the output.mp3 files for later use to save on bandwidth and El
 
 Future work0: Custom head up display using a Flask Web App - Started on this 4/20/24
 
-Future work1: Add wireless remote control via an ESP32 Microntoller- Start and stop ESTOP function, instant jokes etc.
+Future work1: Add wireless remote control via an ESP32 Microcontroller- Start and stop ESTOP function, instant jokes etc.
 
 Future work2: Use ChatGPT to respond to speech shouted at the robot.
 
