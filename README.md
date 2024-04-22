@@ -21,7 +21,7 @@ The code supports a robot base. The robot base has a RaspberryPi 5, PCA9685 (PWM
 Motor controllers, 4 motors, a USB camera, USB soundcard, Audio Ampplifier and Audio speaker, and wireless XBOX controller
 
 # Remote Control
-This feature is achieved by using Viams built-in features.
+This feature is achieved by using Viams built-in features. There is an XBOX controller available for manual control. 
 
 # Text to Speech
 This feature is achieved by leveraging Eleven Labs API
@@ -73,7 +73,8 @@ Future work7: Implement status RGB LEDs using the Neopixel library. The RPI5 cur
                 # This feature could be implement using an Arduino or other microcontroller but i'm short on time. 
                 # Things to indicate using Neopixel LEDs. Network Status / Direction travel / Processor Heartbeat / an attraction pattern to bring curious runners closer to the camera
  
-
+Robot Base - Electrical Schematic
+![App Screenshot](https://github.com/sirwalterrrich/-Robo-DeMo-1000/blob/main/Wiring-Schematic/Robot_RPI_4_Motor_circuit_bb2.png)
 
 
 ## Authors
