@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Play Sound</title>
+</head>
+<body>
+    <audio src="{{ url_for('static', filename='audio/' + filename) }}" autoplay controls></audio>
+    <button onclick="window.history.back();">Back</button>
+</body>
+</html>

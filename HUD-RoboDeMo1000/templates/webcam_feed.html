@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Feed</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .webcam-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        #webcam {
+            border: 2px solid red;
+        }
+        .button {
+            background-color: #900;
+            border: 2px outset #600;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .button:hover, .button:focus {
+            background-color: #c00;
+            border-color: #900;
+        }
+    </style>
+</head>
+<body>
+    <div class="webcam-container">
+        <!-- <img id="webcam" src="/capture_frame" alt="Webcam Feed"> -->
+        <img id="webcam" src="/HUD-RoboDeMo1000/templates/placeholder-image.png" alt="Robot Vision Feed">
+        <button class="button" onclick="capture()">Capture Screenshot</button>
+        <canvas id="screenshot"></canvas>
+    </div>
+    <script>
+        function capture() {
+            const webcamImage = document.getElementById('webcam');
+            const screenshotCanvas = document.getElementById('screenshot');
+            const context = screenshotCanvas.getContext('2d');
+            screenshotCanvas.width = webcamImage.width;
+            screenshotCanvas.height = webcamImage.height;
+            context.drawImage(webcamImage, 0, 0);
+            const image = screenshotCanvas.toDataURL('image/jpeg');
+            // Send image data to server for saving
+            fetch('/save_screenshot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image: image })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error saving screenshot:', error));
+        }
+    </script>
+</body>
+</html>

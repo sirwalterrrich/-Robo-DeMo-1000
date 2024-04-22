@@ -1,0 +1,48 @@
+/* styles.css */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Press Start 2P', sans-serif;
+    color: #a1a1a1;
+    text-shadow: 0.15em 0.15em 0 rgba(0, 0, 0, 0.5);
+    text-align: center;
+    background: #535353;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.game {
+    flex: 1 0 auto;
+    background-image: url('doom_background.jpg'); /* Replace with your DOOM-style background image */
+    background-size: cover;
+    background-position: center center;
+}
+
+.hud-container {
+    padding: 20px;
+}
+
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.box {
+    text-align: center;
+}
+
+.number {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.avatar img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}

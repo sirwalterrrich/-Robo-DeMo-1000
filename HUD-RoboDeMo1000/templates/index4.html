@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Runner HUD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #333;
+            color: #0f0;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .hud {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            background: url('robot-runner-hud.png') no-repeat bottom center;
+            background-size: cover;
+            z-index: 1000;
+        }
+        .system-info {
+            font-size: 1.2rem;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .soundboard {
+            position: absolute;
+            bottom: 25%; /* Adjusted to fit above the HUD */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .button {
+            background-color: #005500;
+            border: 2px solid #003300;
+            color: #0f0;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            outline: none;
+        }
+        .button:hover, .button:focus {
+            background-color: #007700;
+            border-color: #005500;
+        }
+        .webcam-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #webcam {
+            border: 3px solid #0f0;
+            max-width: 80%;
+            height: auto;
+        }
+        #screenshot {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="hud">
+        <div class="system-info">{{ system_info }}</div>
+    </div><!-- Add this button in your HTML where you want the button to appear -->
+            <button onclick="location.href='{{ url_for('run_script') }}'" type="button">Launch Robo DeMo</button>
+    <div class="soundboard">
+        
+        {% for sound in sounds %}
+            <button class="button" onclick="window.location.href='/play_local/{{ sound }}'">{{ sound.replace('.mp3', '') }}</button>
+        {% endfor %}
+    </div>
+    <div class="webcam-container">
+        <!-- <img id="webcam" src="/capture_frame" alt="Robot Vision Feed"> -->
+        <img id="webcam" src="/soundboard/templates/placeholder-image.png" alt="Robot Vision Feed">
+        <button class="button" onclick="capture()">Capture Image</button>
+        <canvas id="screenshot"></canvas>
+    </div>
+    <script>
+        function capture() {
+            const webcamImage = document.getElementById('webcam');
+            const screenshotCanvas = document.getElementById('screenshot');
+            const context = screenshotCanvas.getContext('2d');
+            screenshotCanvas.width = webcamImage.width;
+            screenshotCanvas.height = webcamImage.height;
+            context.drawImage(webcamImage, 0, 0);
+            const image = screenshotCanvas.toDataURL('image/jpeg');
+            // Send image data to server for saving
+            fetch('/save_screenshot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image: image })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error saving screenshot:', error));
+        }
+    </script>
+</body>
+</html>
