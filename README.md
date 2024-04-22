@@ -33,26 +33,7 @@ This motivator_demotivator_1000.py script uses the ElevenLabs API for speech to 
 Computer Vision is achieved by using Viam's built-in CV/ML features
 
 A People Detector was developed to trigger on people. Vision -> mlmodel
-
-Future work0: Custom head up display using a Flask Web App - Started on this 4/20/24
-
-Future work1: Add wireless remote control via an ESP32 Microntoller- Start and stop ESTOP function, instant jokes etc.
-
-Future work2: Use ChatGPT to respond to speech shouted at the robot.
-
-Future work3: I hope to use Computer Vision facial recognition models to trigger the type of selected messages.
-               For example, if the person looks super stressed during a run then tell them something motivational or funny.
-
-Future work4: Save the output.mp3 files for later use to save on bandwidth and ElevenLabs API Usage.
-
-Future work5: Implement the Viam 'navigation service' using a GPS module and IMU (9 axis accelerometer).
-
-Future work6: Use VIAM builtin computer vision to identify path markings for navigation and obstacle avoidance.
-
-Future work7: Implement status RGB LEDs using the Neopixel library. The RPI5 currently does not support the Neopixel library due to a hardware change.
-                # This feature could be implement using an Arduino or other microcontroller but i'm short on time. 
-                # Things to indicate using Neopixel LEDs. Network Status / Direction travel / Processor Heartbeat / an attraction pattern to bring curious runners closer to the camera
- 
+This script uses the ElevenLabs API for speech to text generation and pygame libraries for audio output.
 
 ## Features
 
@@ -73,8 +54,26 @@ For example, if the person looks super stressed during a run then tell them some
 
 Future work: Save the output.mp3 files for later use to save on bandwidth and ElevenLabs API Usage.
 
-This script uses the ElevenLabs API for speech to text generation and pygame libraries for audio output.
+Future work0: Custom head up display using a Flask Web App - Started on this 4/20/24
+
+Future work1: Add wireless remote control via an ESP32 Microcontroller- Start and stop ESTOP function, instant jokes etc.
+
+Future work2: Use ChatGPT to respond to speech shouted at the robot.
+
+Future work3: I hope to use Computer Vision facial recognition models to trigger the type of selected messages.
+               For example, if the person looks super stressed during a run then tell them something motivational or funny.
+
+Future work4: Save the output.mp3 files for later use to save on bandwidth and ElevenLabs API Usage.
+
+Future work5: Implement the Viam 'navigation service' using a GPS module and IMU (9 axis accelerometer).
+
+Future work6: Use VIAM builtin computer vision to identify path markings for navigation and obstacle avoidance.
+
+Future work7: Implement status RGB LEDs using the Neopixel library. The RPI5 currently does not support the Neopixel library due to a hardware change.
+                # This feature could be implement using an Arduino or other microcontroller but i'm short on time. 
+                # Things to indicate using Neopixel LEDs. Network Status / Direction travel / Processor Heartbeat / an attraction pattern to bring curious runners closer to the camera
  
+
 
 
 ## Authors
