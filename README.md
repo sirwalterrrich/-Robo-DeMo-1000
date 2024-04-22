@@ -33,6 +33,26 @@ This motivator_demotivator_1000.py script uses the ElevenLabs API for speech to 
 Computer Vision is achieved by using Viam's built-in CV/ML features
 
 A People Detector was developed to trigger on people. Vision -> mlmodel
+This script uses the ElevenLabs API for speech to text generation and pygame libraries for audio output.
+
+## Features
+
+motivator_demotivator_1000.py
+
+This script uses the ElevenLabs AI voice service to generate speech from text.
+
+The text come from lists(motivations, demotivations, motivations2 ) of AI generated phrases (chatGPT)
+that would either motivate or demotivate a distance runner.
+
+Once executed, the messaging is at random. A random message from the list will be selected to be played. 
+The script saves the audio file as output.mp3
+
+# Future work: 
+I hope to use Computer Vision facial recognition models to trigger the type of selected messages.
+
+For example, if the person looks super stressed during a run then tell them something motivational or funny.
+
+Future work: Save the output.mp3 files for later use to save on bandwidth and ElevenLabs API Usage.
 
 Future work0: Custom head up display using a Flask Web App - Started on this 4/20/24
 
@@ -54,27 +74,6 @@ Future work7: Implement status RGB LEDs using the Neopixel library. The RPI5 cur
                 # Things to indicate using Neopixel LEDs. Network Status / Direction travel / Processor Heartbeat / an attraction pattern to bring curious runners closer to the camera
  
 
-## Features
-
-motivator_demotivator_1000.py
-
-This script uses the ElevenLabs AI voice service to generate speech from text.
-
-The text come from lists(motivations, demotivations, motivations2 ) of AI generated phrases (chatGPT)
-that would either motivate or demotivate a distance runner.
-
-Once executed, the messaging is at random. A random message from the list will be selected to be played. 
-The script saves the audio file as output.mp3
-
-# Future work: 
-I hope to use Computer Vision facial recognition models to trigger the type of selected messages.
-
-For example, if the person looks super stressed during a run then tell them something motivational or funny.
-
-Future work: Save the output.mp3 files for later use to save on bandwidth and ElevenLabs API Usage.
-
-This script uses the ElevenLabs API for speech to text generation and pygame libraries for audio output.
- 
 
 
 ## Authors
